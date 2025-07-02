@@ -45,19 +45,18 @@ main {
 }
 
 .about-content {
-    display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem; /* Menos espacio entre imagen y texto */
     margin-bottom: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
 }
+
 
 #about-me img {
     border-radius: 10px;
     width: 300px;
-    height: auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -67,7 +66,6 @@ main {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    flex-wrap: wrap;
     text-align: left;
 }
 
@@ -97,7 +95,7 @@ footer a:hover {
 
 /* === Media Queries === */
 
-/* Tablets (<= 992px) */
+/* Tablets y móviles: mantener imagen a la izquierda */
 @media (max-width: 992px) {
     header {
         flex-direction: column;
@@ -114,17 +112,23 @@ footer a:hover {
     }
 
     .about-content {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
     }
 
     #about-me img {
-        width: 80%;
-        max-width: 250px;
+        width: 150px;
+        max-width: 40%;
+    }
+
+    #about-me ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
-/* Móviles (<= 576px) */
 @media (max-width: 576px) {
     header {
         padding: 1rem;
@@ -145,13 +149,8 @@ footer a:hover {
     }
 
     #about-me img {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    #about-me ul {
-        flex-direction: column;
-        align-items: center;
+        width: 120px;
+        max-width: 35%;
     }
 
     footer {
