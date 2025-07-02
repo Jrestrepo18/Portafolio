@@ -1,3 +1,4 @@
+/* === Estilos base === */
 body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
@@ -13,6 +14,14 @@ header {
     background-color: #400101;
     color: white;
     padding: 1rem 2rem;
+    flex-wrap: wrap;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
 }
 
 nav a {
@@ -29,6 +38,7 @@ main {
     padding: 2rem;
 }
 
+/* === Sección About Me === */
 #about-me {
     max-width: 900px;
     margin: 0 auto;
@@ -39,6 +49,9 @@ main {
     align-items: center;
     gap: 2rem;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
 }
 
 #about-me img {
@@ -55,6 +68,7 @@ main {
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
+    text-align: left;
 }
 
 #about-me li::before {
@@ -64,6 +78,7 @@ main {
     margin-right: 6px;
 }
 
+/* === Footer === */
 footer {
     text-align: center;
     padding: 1rem;
@@ -78,4 +93,68 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* === Media Queries === */
+
+/* Tablets (<= 992px) */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about-me img {
+        width: 80%;
+        max-width: 250px;
+    }
+}
+
+/* Móviles (<= 576px) */
+@media (max-width: 576px) {
+    header {
+        padding: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        margin-left: 0;
+        padding: 0.5rem 0;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    #about-me img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #about-me ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
 }
